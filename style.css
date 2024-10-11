@@ -13,12 +13,15 @@ body {
 }
 
 .container {
+    max-width: 25%;
+    min-width: 350px;
     text-align: left;
     display: block;
     flex: 1;
     color: #74c0fc;
     font-size: 16px;    
     margin: 0 auto;
+    padding: 30px;
 }
 
 .container a,
@@ -50,38 +53,12 @@ ul {
 }
 
 input[type="radio"] {
-    margin-top: 8px;
+    margin-top: 7px;
     accent-color: #74c0fc;
 }
 
 input[type="radio"]:hover {
     cursor: pointer;
-}
-
-input[type="radio"]:after {
-    width: 13px;
-    height: 13px;
-    border-radius: 15px;
-    top: 0px;
-    left: 0px;
-    position: relative;
-    background-color: #adb5bd;
-    content: '';
-    display: inline-block;
-    visibility: visible;
-}
-
-input[type="radio"]:checked:after {
-    width: 13px;
-    height: 13px;
-    border-radius: 15px;
-    top: 0px;
-    left: 0px;
-    position: relative;
-    background-color: #74c0fc;
-    content: '';
-    display: inline-block;
-    visibility: visible;
 }
 
 .footer {
