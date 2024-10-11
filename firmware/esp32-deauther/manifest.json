@@ -1,0 +1,58 @@
+{
+  "name": "ESP32-Deauther",
+  "version": "1.0.0",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "/firmware/esp32-deauther/esp32/bootloader.bin",
+          "offset": 4096
+        },
+        {
+          "path": "/firmware/esp32-deauther/esp32/partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "/firmware/esp32-deauther/esp32/firmware.bin",
+          "offset": 65536
+        }
+      ]
+    },
+    {
+      "chipFamily": "ESP32-C3",
+      "parts": [
+        {
+          "path": "/firmware/esp32-deauther/esp32-c3/bootloader.bin",
+          "offset": 0
+        },
+        {
+          "path": "/firmware/esp32-deauther/esp32-c3/partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "/firmware/esp32-deauther/esp32-c3/firmware.bin",
+          "offset": 65536
+        }
+      ]
+    },
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        {
+          "path": "/firmware/esp32-deauther/esp32-s3/bootloader.bin",
+          "offset": 0
+        },
+        {
+          "path": "/firmware/esp32-deauther/esp32-s3/partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "/firmware/esp32-deauther/esp32-s3/firmware.bin",
+          "offset": 65536
+        }
+      ]
+    }
+  ]
+}

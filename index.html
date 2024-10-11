@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ESP32-Webflasher</title>
+</head>
+
+<body>
+    <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+    <div class="container">
+        <h1>ESP32 Webflasher</h1>
+        <p>Flash my projects to your ESP32 directly from your browser.</p>
+        <p>Make sure to use Chrome or Edge, Firefox is not supported.</p>
+        <p>1. Select the firmware you want to use. The ESP32 model is determined automatically</p>
+        <p>2. Connect your ESP32, click the Connect button and select the COM port</p>
+        <p>3. Click the Install button to start the flashing process</p>
+
+        <ul>
+            <li>
+                <label class="radio-label">
+                    <input type="radio" name="options" value="esp32-deauther">
+                    <span class="list-item">
+                        <h2><a href="https://github.com/tesa-klebeband/ESP32-Deauther">ESP32-Deauther</a></h2>
+                        <p>Disconnect devices remotely from any WiFi network</p>
+                        <p>Supported Devices: ESP32, ESP32-C3, ESP32-S3</p>
+                    </span>
+                </label>
+            </li>
+        </ul>
+        <br>
+
+        <esp-web-install-button class="invisible" manifest="https://firmware.esphome.io/esp-web-tools/manifest.json">
+            <button slot="activate" class="connect-button">Connect</button>
+
+            <span slot="unsupported"><h3>Your browser doesn't support the WebSerial API</h3></span>
+            <span slot="not-allowed"><h3>Please use https when requesting this website</h3></span>
+        </esp-web-install-button>
+    </div>
+    <div class="footer">
+        <p>Projects and binaries by <a href="https://github.com/tesa-klebeband">tesa-klebeband</a> •
+            Web flasher powered by <a href="https://esphome.github.io/esp-web-tools/">ESP Web Tools</a></p>
+    </div>
+
+    <script>
+        document.querySelectorAll('input[name="options"]').forEach(radio =>
+            radio.addEventListener("change", () => {
+                const button = document.querySelector('esp-web-install-button');
+                button.manifest = `./firmware/${radio.value}/manifest.json`;
+                button.classList.remove('invisible');
+            }
+            ));
+    </script>
+</body>
+
+</html>
