@@ -21,7 +21,7 @@ body {
     text-align: left;
     display: block;
     flex: 1;
-    color: #74c0fc;
+    color: #adb5bd;
     font-size: 16px;    
     margin: 0 auto;
     padding: 30px;
@@ -95,4 +95,8 @@ input[type="radio"]:hover {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 5px;
+}
+
+h1 {
+    color: #74c0fc;
 }
